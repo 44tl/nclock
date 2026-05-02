@@ -4,6 +4,11 @@ void App::do_kbdb_win() {
     auto overlay = create_overlay();
 
     int dh = wsz.r - 20, dw = wsz.c - 20;
+    if (dh < 12 || dw < 40) {
+        delwin(overlay);
+        do_error("Terminal too small for keybind window");
+        return;
+    }
     WINDOW* dialog = newwin(dh, dw, 10, 10);
     wbkgd(dialog, COLOR_PAIR(CPAIR_OVERLAY));
     box(dialog, 0, 0);

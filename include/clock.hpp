@@ -1,6 +1,7 @@
 #pragma once
 #include <ncurses.h>
 #include <ctime>
+#include <filesystem>
 #include <functional>
 #include <optional>
 #include <string>

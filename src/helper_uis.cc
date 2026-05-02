@@ -18,7 +18,7 @@ void App::do_error(const char* err) {
     cblock(dialog, CPAIR_ERR, [&]() {
         mvwprintw(dialog, 2, 3, "!!Error!!");
     });
-    mvwprintw(dialog, 3, 5, err);
+    mvwprintw(dialog, 3, 5, "%s", err);
 
     int btn_row = dh - 3, btn_col = (dw - 6) / 2;
     wattron(dialog, A_REVERSE);
